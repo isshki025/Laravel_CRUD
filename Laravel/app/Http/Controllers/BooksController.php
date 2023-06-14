@@ -42,4 +42,27 @@ class BooksController extends Controller
         ]);
         return redirect('/index');
     }
+
+    // updateFormメソッドです。
+    public function updateForm($id)
+    {
+        $book = Book::where('id', $id)->first();
+        return view('books.updateForm', ['book'=>$book]);
+    }
+
+    // updateメソッドです。本の情報の更新(編集・修正)処理をします
+    public function update(Request $request)
+    {
+        // 1つ目の処理
+        $id = $request->input('id');
+        $up_title = $request->input('upTitle');
+        $up_price = $request->input('upPrice');
+        // 2つ目の処理
+        Book::where('id', $id)->update([
+            'title' => $up_title,
+            'price' => $up_price
+        ]);
+        // 3つ目の処理
+        return redirect('/index');
+    }
 }

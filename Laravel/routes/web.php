@@ -34,3 +34,6 @@ Route::post('/author/create', 'AuthorsController@authorCreate');
 
 // 本を登録する処理を実行する
 Route::post('/book/create', 'BooksController@bookCreate');
+
+//本の情報を更新(修正・編集)する
+Route::get('/book/{id}/update-form', 'BooksController@updateForm');
