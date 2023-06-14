@@ -37,3 +37,6 @@ Route::post('/book/create', 'BooksController@bookCreate');
 
 //本の情報を更新(修正・編集)する
 Route::get('/book/{id}/update-form', 'BooksController@updateForm');
+
+//本の情報を削除する
+Route::get('/book/{id}/delete', 'BooksController@delete');
