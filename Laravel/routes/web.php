@@ -42,3 +42,7 @@ Route::get('/book/{id}/update-form', 'BooksController@updateForm');
 Route::get('/book/{id}/delete', 'BooksController@delete');
 
 Route::post('/search', 'BooksCOntroller@search');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
