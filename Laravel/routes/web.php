@@ -25,3 +25,12 @@ Route::get('/hello', 'BooksController@hello');
 // カリキュラムではこの記述だが、本来は下の記述が理想。
 Route::get('/index', 'BooksController@index');
 // Route::get('/books', 'BooksController@index');
+
+// 著者や本を登録するページを表示する
+Route::get('/create-form', 'BooksController@createForm');
+
+// 著者を登録する処理を実行する
+Route::post('/author/create', 'AuthorsController@authorCreate');
+
+// 本を登録する処理を実行する
+Route::post('/book/create', 'BooksController@bookCreate');
